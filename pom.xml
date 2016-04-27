@@ -29,23 +29,6 @@
             <artifactId>dropwizard-logging</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.dropwizard</groupId>
-            <artifactId>dropwizard-jdbi</artifactId>
-            <version>${dropwizard.version}</version>
-        </dependency>
-
-        <!-- Dependency requirements -->
-        <dependency>
-            <groupId>com.makeandbuild</groupId>
-            <artifactId>persistence</artifactId>
-            <version>${makeandbuild.persistence.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.34</version>
-        </dependency>
 
     </dependencies>
 
