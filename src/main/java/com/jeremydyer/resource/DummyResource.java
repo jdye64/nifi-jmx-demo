@@ -16,9 +16,32 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class DummyResource {
 
+    private boolean delayed = false;
+    private long sleepTime = 10000;
+
     @GET
     @Timed
     public String[] getSearchCache() {
+
+        if (delayed) {
+            System.out.println("Delayed so sleeping " + sleepTime + " milliseconds");
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         return new String[]{"dummy", "resource"};
+    }
+
+    @GET
+    @Path("/delayed")
+    public boolean toggleDelayed() {
+        if (delayed) {
+            delayed = false;
+        } else {
+            delayed = true;
+        }
+        return delayed;
     }
 }
